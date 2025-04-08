@@ -1,0 +1,18 @@
+/* background-image: linear-gradient(to bottom right, #7285a3, #0c1d38); */
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Ewert&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+#root {
+    max-width: 1440px;
+    /* margin: 0 auto;
+    padding: 1rem;
+    text-align: center; */
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    box-sizing: border-box;
+  }
+  /* nav{
+ 
+background: linear-gradient(135deg,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#111111 72%,#1c1c1c 91%,#2b2b2b 100%,#131313 100%);
+
+  } */

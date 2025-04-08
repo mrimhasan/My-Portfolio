@@ -1,0 +1,28 @@
+
+
+#cube{
+    transform: rotateX(0deg);
+    animation: myAnimation 12s ease-in-out infinite;
+}
+
+#Subcube p{
+    transform: rotateX(calc(90deg * var(--i))) translateZ(15px);
+}
+
+@keyframes myAnimation{
+    0%{
+        transform:rotateX(0deg);
+    }
+    25%{
+        transform:rotateX(-90deg);
+    }
+    50%{
+        transform:rotateX(-180deg);
+    }
+    75%{
+        transform:rotateX(-270deg);
+    }
+    100%{
+        transform:rotateX(-360deg);
+    }
+}
