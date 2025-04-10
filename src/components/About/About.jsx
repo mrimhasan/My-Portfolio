@@ -3,16 +3,16 @@ import { motion, useMotionValue } from "framer-motion";
 
 const imgs = [
   {id:0, url: "/images/my-images/iamfrom.jpg", positionY: "39%" },
-  {id:1, url: "/images/my-images/AITH.jpeg", positionY: "39%" },
-  {id:2, url: "/images/my-images/college.jpg", positionY: "50%" },
+  {id:1, url: "/images/my-images/iam.jpeg", positionY: "35%" },
+  {id:2, url: "/images/my-images/AITH.jpeg", positionY: "39%" },
   {id:3, url: "/images/my-images/myboys.jpg", positionY: "20%" },
-  {id:4, url: "/images/my-images/party.jpg", positionY: "39%" },
-  {id:5, url: "/images/my-images/iam.jpg", positionY: "39%" },
+  {id:4, url: "/images/my-images/party.jpg", positionY: "99%" },
+  {id:5, url: "/images/my-images/college.jpg", positionY: "50%" },
   {id:6, url: "/images/my-images/ending.jpg", positionY: "39%" },
 ];
 
 const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 10;
+const AUTO_DELAY = ONE_SECOND * 5;
 const DRAG_BUFFER = 50;
 
 const SPRING_OPTIONS = {
@@ -55,7 +55,7 @@ export default function About() {
   };
 
   return (
-    <div className="relative overflow-hidden bg-neutral-950 ">
+    <div className="relative overflow-hidden bg-black ">
       <motion.div
         drag="x"
         dragConstraints={{

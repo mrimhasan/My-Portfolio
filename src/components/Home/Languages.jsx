@@ -1,13 +1,17 @@
-import React from "react";
-import {motion} from "motion/react"
+import React, { useRef } from "react";
+import { motion, useInView } from "motion/react";
 function Languages() {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: false });
   return (
-    <div
-      className={`bg-blue-500 row-span-1 md:row-span-2 p-4 rounded-2xl h-fit m-2.5 text-center`}
+    <motion.div
+      className="bg-blue-500 row-span-1 md:row-span-2 p-4 rounded-2xl h-fit m-2.5 text-center"
+      ref={ref}
+      initial={{ opacity: 0, x: 100, scale: 0.8 }}
+      animate={isInView ? { opacity: 1, x: 0, scale: 1 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <p
-        className={`text-[1.8em] text-center text-slate-800 font-[Ewert]`}
-      >
+      <p className={`text-[1.8em] text-center text-slate-800 font-[Ewert]`}>
         languages known to speak
       </p>
       <p className="mt-2.5 text-[18px] font-extrabold ">
@@ -53,7 +57,7 @@ function Languages() {
           <span>Writing: Learning...</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,16 +1,22 @@
-import React from "react";
+import React, {useRef} from "react";
 import {
   SiLeetcode,
   SiCodechef,
   SiGeeksforgeeks,
   SiCodingninjas,
 } from "react-icons/si";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { Tooltip } from "react-tooltip";
 import Languages from "./Languages";
 
 function Info() {
-
+  /**** Multi Ref for tracking div individual *****/
+  const ref1 = useRef();
+    const isInView1 = useInView(ref1, { once: false });
+  const ref2 = useRef();
+    const isInView2 = useInView(ref2, { once: false });
+  const ref3 = useRef();
+    const isInView3 = useInView(ref3, { once: false });
   const toolTips_Id_Content = [
     {
       id: "leetcode",
@@ -48,15 +54,24 @@ function Info() {
 
   return (
     <div className=" grid grid-auto-rows-auto grid-cols-1 md:grid-cols-2 col-span-[1fr] mt-[20px] pb-10 ">
-      <div
+      <motion.div
+       ref={ref1}
+       initial={{ opacity: 0, y: 100, scale: 0.8 }}
+        animate={isInView1 ? { opacity: 1, y: 0, scale: 1 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className={` md:col-span-2 m-2.5 ${P_M_B} backdrop-blur-2xl border-1`}
       >
         <p className={`${text}`}>Why I choose software engineering</p>
         <p className="pt-4 px-2.5 pb-4  text-center text-sm font-normal">
           {Why_I_Choose}
         </p>
-      </div>
-      <div className={`bg-[#191919] ${P_M_B} m-2.5 relative overflow-hidden`}>
+      </motion.div>
+      <motion.div
+      ref={ref3}
+      initial={{ opacity: 0, x: -100, scale: 0.8 }}
+      animate={isInView3 ? { opacity: 1, x: 0, scale: 1 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+       className={`bg-[#191919] ${P_M_B} m-2.5 relative overflow-hidden`}>
         <div className="">
           <p className={`${text}`}>As a competitive programmer</p>
           <p className="text-center mt-2.5 text-sm font-normal">
@@ -87,7 +102,7 @@ function Info() {
           }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
-      </div>
+      </motion.div>
       <Languages />
       {/* <div>
           <p>Achievment</p>
@@ -96,13 +111,10 @@ function Info() {
       {/* <div>currently where i am like my journey and gap my weaknes my motivation</div> */}
       <motion.div
         className={` ${P_M_B} h-fit m-2.5 bg-linear-to-b from-slate-800 to bg-[#0e0d0d]`}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          
-          duration: 0.5,
-          scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-        }}
+        ref={ref2}
+        initial={{ opacity: 0, x: -100, scale: 0.8 }}
+        animate={isInView2 ? { opacity: 1, x: 0, scale: 1 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <p className={`${text}`}>Quote's</p>
         <p className="relative">
@@ -131,3 +143,11 @@ function Info() {
 }
 
 export default Info;
+/******* backOut animate ****/
+// initial={{ opacity: 0, scale: 0 }}
+// animate={isView? { opacity: 1, scale: 1 }:{}}
+// transition={{
+  
+//   duration: 0.5,
+//   scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+// }}
