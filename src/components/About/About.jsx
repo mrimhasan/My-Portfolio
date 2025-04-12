@@ -7,8 +7,7 @@ const imgs = [
   {id:2, url: "/images/my-images/AITH.jpeg", positionY: "39%" },
   {id:3, url: "/images/my-images/myboys.jpg", positionY: "20%" },
   {id:4, url: "/images/my-images/party.jpg", positionY: "99%" },
-  {id:5, url: "/images/my-images/college.jpg", positionY: "50%" },
-  {id:6, url: "/images/my-images/ending.jpg", positionY: "39%" },
+  {id:5, url: "/images/my-images/ending.jpg", positionY: "39%" },
 ];
 
 const ONE_SECOND = 1000;
