@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
 function Languages() {
   const ref = useRef();
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   return (
     <motion.div
       className="bg-blue-500 row-span-1 md:row-span-2 p-4 rounded-2xl h-fit m-2.5 text-center"

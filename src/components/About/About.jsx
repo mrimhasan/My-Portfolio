@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
-
+import MyInfo from "./MyInfo";
 const imgs = [
-  {id:0, url: "/images/my-images/iamfrom.jpg", positionY: "39%" },
-  {id:1, url: "/images/my-images/iam.jpeg", positionY: "35%" },
-  {id:2, url: "/images/my-images/AITH.jpeg", positionY: "39%" },
-  {id:3, url: "/images/my-images/myboys.jpg", positionY: "20%" },
-  {id:4, url: "/images/my-images/party.jpg", positionY: "99%" },
-  {id:5, url: "/images/my-images/ending.jpg", positionY: "39%" },
+  {id:0, url: "/images/about-images/iamfrom.jpg", positionY: "39%" },
+  {id:1, url: "/images/about-images/iam.jpeg", positionY: "35%" },
+  {id:2, url: "/images/about-images/AITH.jpeg", positionY: "39%" },
+  {id:3, url: "/images/about-images/myboys.jpg", positionY: "20%" },
+  {id:4, url: "/images/about-images/party.jpg", positionY: "99%" },
+  {id:5, url: "/images/about-images/ending.jpg", positionY: "39%" },
 ];
 
 const ONE_SECOND = 1000;
@@ -54,7 +54,8 @@ export default function About() {
   };
 
   return (
-    <div className="relative overflow-hidden bg-black ">
+    <div className=" bg-radial from-[#244577] from-1% via-black  to-[#010101] bg-linear-rl">
+    <div className="relative overflow-hidden">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -76,6 +77,8 @@ export default function About() {
 
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
       <GradientEdges />
+    </div>
+    <MyInfo/>
     </div>
   );
 }

@@ -12,11 +12,11 @@ import Languages from "./Languages";
 function Info() {
   /**** Multi Ref for tracking div individual *****/
   const ref1 = useRef();
-    const isInView1 = useInView(ref1, { once: false });
+    const isInView1 = useInView(ref1, { once: true });
   const ref2 = useRef();
-    const isInView2 = useInView(ref2, { once: false });
+    const isInView2 = useInView(ref2, { once: true });
   const ref3 = useRef();
-    const isInView3 = useInView(ref3, { once: false });
+    const isInView3 = useInView(ref3, { once: true });
   const toolTips_Id_Content = [
     {
       id: "leetcode",

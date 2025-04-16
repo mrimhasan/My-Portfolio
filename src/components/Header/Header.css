@@ -6,10 +6,6 @@ text-shadow: 0 0 10px #fff, 0 0 20px #fff; */
     
 }
 
-/* li:hover{
-  text-shadow: 0 0 10px white, 0 0 2px white;
-  color: white;
-} */
 
 span.absolute:after {
     content: '';
