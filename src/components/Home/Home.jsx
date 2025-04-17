@@ -14,7 +14,7 @@ function Home() {
             collaboration, I work effectively with frontend, backend, and DevOps
             teams to build robust and scalable solutions.`
   return (
-    <div className="px-[5%] bg-[#010101] pt-[5%] font-semibold text-[#dad3d3] bg-radial from-[#244577] from-1% via-black  to-[#010101] bg-linear-rl">
+    <div className="px-[5%] bg-[#010101] pt-[5%] font-semibold text-white bg-radial from-[#244577] from-1% via-black  to-[#010101] bg-linear-rl">
       <div className=" grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-y-[4%] sm:gap-x-[1%] p-2 place-items-center">
         <div className=" rounded-[10px] p-4">
           {/*intro*/}
@@ -28,6 +28,7 @@ function Home() {
           <p className="text-sm/5 text-justify">
             {Intro}
           </p>
+          {/*Resume Button */}
           <motion.div
             className="relative flex  justify-start overflow-hidden w-fit p-1 rounded-lg mt-2"
             whileHover={{ scale: 1.1 }}
@@ -40,7 +41,6 @@ function Home() {
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             />
 
-            {/*Resume Button */}
             <a href={resumeURL} target="_blank">
               <button className="relative px-6 py-2 text-white bg-black cursor-pointer rounded-lg shadow-md hover:bg-linear-to-t from-sky-500 to-indigo-500">
                 <MdDownloadForOffline className="inline-block text-xl mb-1 mr-1" />

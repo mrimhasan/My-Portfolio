@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import MyInfo from "./MyInfo";
+
+
 const imgs = [
   {id:0, url: "/images/about-images/iamfrom.jpg", positionY: "39%" },
   {id:1, url: "/images/about-images/iam.jpeg", positionY: "35%" },
@@ -19,6 +21,57 @@ const SPRING_OPTIONS = {
   mass: 3,
   stiffness: 400,
   damping: 50,
+};
+
+const Images = ({ imgIndex }) => {
+  return (
+    <>
+      {imgs.map((imgSrc, _) => {
+        return (
+          <motion.div
+            key={imgSrc.id}
+            style={{
+              backgroundImage: `url(${imgSrc.url})`,
+              backgroundSize: "cover",
+              backgroundPositionY: `${imgSrc.positionY}`,
+            }}
+            animate={{
+              scale: imgIndex === imgSrc.id ? 0.95 : 0.85,
+            }}
+            transition={SPRING_OPTIONS}
+            className="aspect-[4/1.6] w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
+          />
+        );
+      })}
+    </>
+  );
+};
+
+const Dots = ({ imgIndex, setImgIndex }) => {
+  return (
+    <div className="mt-4 flex w-full justify-center gap-2">
+      {imgs.map((_, idx) => {
+        return (
+          <button
+            key={idx}
+            onClick={() => setImgIndex(idx)}
+            className={`h-3 w-3 rounded-full transition-colors ${
+              idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
+            }`}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+const GradientEdges = () => {
+  return (
+    <>
+      <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-r from-neutral-950/50 to-neutral-950/0" />
+      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-l from-neutral-950/50 to-neutral-950/0" />
+    </>
+  );
 };
 
 export default function About() {
@@ -82,54 +135,3 @@ export default function About() {
     </div>
   );
 }
-
-const Images = ({ imgIndex }) => {
-  return (
-    <>
-      {imgs.map((imgSrc, _) => {
-        return (
-          <motion.div
-            key={imgSrc.id}
-            style={{
-              backgroundImage: `url(${imgSrc.url})`,
-              backgroundSize: "cover",
-              backgroundPositionY: `${imgSrc.positionY}`,
-            }}
-            animate={{
-              scale: imgIndex === imgSrc.id ? 0.95 : 0.85,
-            }}
-            transition={SPRING_OPTIONS}
-            className="aspect-[4/1.6] w-screen shrink-0 rounded-xl bg-neutral-800 object-cover"
-          />
-        );
-      })}
-    </>
-  );
-};
-
-const Dots = ({ imgIndex, setImgIndex }) => {
-  return (
-    <div className="mt-4 flex w-full justify-center gap-2">
-      {imgs.map((_, idx) => {
-        return (
-          <button
-            key={idx}
-            onClick={() => setImgIndex(idx)}
-            className={`h-3 w-3 rounded-full transition-colors ${
-              idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
-            }`}
-          />
-        );
-      })}
-    </div>
-  );
-};
-
-const GradientEdges = () => {
-  return (
-    <>
-      <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-r from-neutral-950/50 to-neutral-950/0" />
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[10vw] max-w-[100px] bg-gradient-to-l from-neutral-950/50 to-neutral-950/0" />
-    </>
-  );
-};

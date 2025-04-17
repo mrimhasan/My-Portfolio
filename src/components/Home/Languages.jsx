@@ -17,7 +17,7 @@ function Languages() {
       <p className="mt-2.5 text-[18px] font-extrabold ">
         I can speak, read and write following languages.
       </p>
-      <div className="mt-3 text-[#dad3d3]">
+      <div className="mt-3 text-neutral-200">
         <p className="text-xl">Hindi</p>
         <div className="flex justify-around">
           <span>Speaking: Native</span>
@@ -25,7 +25,7 @@ function Languages() {
           <span>Writing: Advance</span>
         </div>
       </div>
-      <div className="mt-3  text-[#dad3d3]">
+      <div className="mt-3  text-neutral-200">
         <p className="text-xl">English</p>
         <div className="flex justify-around ">
           <span>Speaking: Intermediate</span>
@@ -33,7 +33,7 @@ function Languages() {
           <span>Writing: Advance</span>
         </div>
       </div>
-      <div className="mt-3  text-[#dad3d3]">
+      <div className="mt-3  text-neutral-200">
         <p className="text-xl">Urdu</p>
         <div className="flex justify-around">
           <span>Speaking: Intermediate</span>
@@ -41,7 +41,7 @@ function Languages() {
           <span>Writing: Elementry</span>
         </div>
       </div>
-      <div className="mt-3  text-[#dad3d3]">
+      <div className="mt-3  text-neutral-200">
         <p className="text-xl">Arabic</p>
         <div className="flex justify-around">
           <span>Speaking: Elementry</span>
@@ -49,7 +49,7 @@ function Languages() {
           <span>Writing: Elementry</span>
         </div>
       </div>
-      <div className="mt-3 mb-2.5  text-[#dad3d3]">
+      <div className="mt-3 mb-2.5  text-neutral-200">
         <p className="text-xl">Japenese (Nihongo)</p>
         <div className="flex justify-around">
           <span>Speaking: Elementry</span>

@@ -47,10 +47,10 @@ function Skills() {
     <div className="p-[5%] bg-[#010101] font-semibold  bg-radial from-[#244577] from-1% via-black  to-[#010101]">
       <div className="grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2   place-items-center">
         <div className=" pl-4">
-          <p className=" text-[4em]/14 font-serif text-[#dad3d3]">
+          <p className=" text-[4em]/14 font-serif text-neutral-200">
             What I bring
           </p>
-          <p className="text-sm/5 mt-3 text-[#dad3d3]">
+          <p className="text-sm/5 mt-3 text-neutral-200">
             Strong foundation in frontend technologies (React.js, TailwindCSS,
             Framer-Motion). Experience in building dynamic, responsive, and
             user-friendly applications. Understanding of API integration, state

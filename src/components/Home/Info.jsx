@@ -17,6 +17,7 @@ function Info() {
     const isInView2 = useInView(ref2, { once: true });
   const ref3 = useRef();
     const isInView3 = useInView(ref3, { once: true });
+    
   const toolTips_Id_Content = [
     {
       id: "leetcode",
