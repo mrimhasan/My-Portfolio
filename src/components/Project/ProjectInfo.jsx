@@ -1,6 +1,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import ProjectCards from "./ProjectCards";
+import ContactForm from "./ContactForm";
 
 const textLines = [
   "I’ve worked on several projects in Web Development, which have helped me sharpen both my technical and problem-solving skills.",
@@ -35,7 +36,7 @@ const ScrollFadeInText = () => {
           variants={fadeInVariant}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="mb-4 text-sm sm:text-lg/6 font-medium text-neutral-200"
+          className="mb-4 text-sm sm:text-lg/6 font-medium text-neutral-200 max-[400px]:text-justify max-[400px]:tracking-tight"
         >
           {line}
         </motion.p>
@@ -52,19 +53,23 @@ const ProjectInfo = () => {
         alt="project-IMG"
         className="w-full h-[65vh] md:h-[80vh]"
       />
-      <div className="p-[2%_4%] bg-[#010101] font-semibold  bg-radial from-[#244577] from-1% via-black  to-[#010101]">
+      <div
+        className="p-[2%_4%] bg-[#010101]  bg-radial from-[#244577] from-1% via-black  to-[#010101] bg-center bg-fixed"
+        style={{ backgroundSize: "110% 150%" }}
+      >
         <ScrollFadeInText />
         {/* Cards */}
-        <ProjectCards/>
-        <p className="sm:text-2xl/7 font-light text-white max-w-5xl mx-auto">
+        <ProjectCards />
+        <p className="sm:text-2xl/7 font-light text-white max-w-5xl mx-auto text-justify tracking-tight">
           These projects taught me the importance of writing clean, maintainable
           code and delivering user-focused solutions. I’m now excited to
           contribute my skills in a professional environment, collaborate with
-          great teams, and continue growing as a developer.
+          great teams, and continue growing as a developer👨‍💻.
         </p>
+        <ContactForm/>
       </div>
     </>
   );
-}
+};
 
 export default ProjectInfo;

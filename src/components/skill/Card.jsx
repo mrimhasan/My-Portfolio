@@ -3,119 +3,6 @@ import { motion, useMotionValue, useTransform } from "motion/react";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
-function CardPopup() {
-  const [showCard, setShowCard] = useState(false);
-
-  return (
-    <div className="relative min-h-screen flex items-center justify-center bg-slate-600">
-      {/* Button */}
-      <button
-        onClick={() => setShowCard(true)}
-        className="px-6 py-2 bg-blue-600 text-white rounded shadow-md"
-      >
-        Show Card
-      </button>
-
-      {/* AnimatePresence for smooth exit */}
-      <AnimatePresence>
-        {showCard && (
-          <>
-            {/* Background Blur */}
-            <motion.div
-              className="fixed inset-0 bg-black/30 backdrop-blur-sm z-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setShowCard(false)} // Close on click
-            />
-
-            {/* Expanding Card */}
-            <motion.div
-              className="fixed z-20 bg-white rounded-xl shadow-2xl p-6 
-                         top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-              initial={{ width: 0, height: 0, opacity: 0 }}
-              animate={{ width: 400, height: 300, opacity: 1 }}
-              exit={{ width: 0, height: 0, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-semibold">Card Title</h2>
-                <button
-                  onClick={() => setShowCard(false)}
-                  className="text-gray-500 hover:text-black"
-                >
-                  ✕
-                </button>
-              </div>
-              <p className="text-black">
-                This is the content inside the expanding card.
-              </p>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-{
-  /* <div>
-        {Skills.map((cardItem)=>(
-        <motion.div key={cardItem.id}
-        className="relative w-80 h-48 bg-gray-900 rounded-2xl shadow-lg overflow-hidden flex items-center justify-center"
-      style={{
-        perspective: 1000,
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      onMouseMove={(e) => {
-        const { width, height, left, top } = e.currentTarget.getBoundingClientRect();
-        const mouseX = e.clientX - left - width / 2;
-        const mouseY = e.clientY - top - height / 2;
-        x.set(mouseX);
-        y.set(mouseY);
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => {
-        x.set(0);
-        y.set(0);
-        setHovered(false);
-      }}
-        >
-            <img src={cardItem.IMG} alt={`${cardItem.name}-image`} />
-            <h2>{cardItem.name}</h2>
-            <p>{cardItem.content}</p>
-            <motion.div
-        className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-20"
-        animate={{
-          opacity: [0, 0.3, 0],
-          x:["-100%", "100%"],
-        }}
-        transition={{ duration: 2, repeat: Infinity, ease:"easeInOut" }}
-      />
-        </motion.div>
-        ))}
-        {/* use models here from hover.dev
-        <div>React/react router/ redux</div>
-        <div>Tailwindcss</div>
-        <div>Framer-motion</div>
-        <div>Bootstrap</div>
-        <div>Scss or Sass</div>
-        <div>css</div>
-        <div>HTML</div>
-        <div>C/C++</div>
-        <div>Javascript</div>
-        <div>Jquery</div>
-        <div>PHP</div>
-        <div>Nodejs</div>
-        <div>Expressjs</div>
-        <div>mongodb</div>
-        <div>Mysql</div>
-        <div>oops</div>
-      </div>   */
-}
-
 function Card() {
   const [expandIMG, setExpandIMG] = useState("");
   const [content, setContent] = useState("");
@@ -236,7 +123,7 @@ function Card() {
       id: [13, 13.1],
       name: "mongodb",
       content:
-        "Mongodb is a NoSQL (non relational) database. {NoSQL (Non-Relational Databases): A flexible, schema-less database system that allows storing data in various formats like key-value, document, column-family, and graph.This database uses a document storage format called BSON which is a binary style of JSON document.",
+        "Mongodb is a NoSQL (non relational) database. NoSQL (Non-Relational Databases): A flexible, schema-less database system that allows storing data in various formats like key-value, document, column-family, and graph.This database uses a document storage format called BSON which is a binary style of JSON document.",
       IMG: "/images/skil-images/mongodb.png",
       deep_dive: "",
     },
@@ -328,7 +215,6 @@ function Card() {
               className="text-white text-xl font-bold border-3 w-[50%] mt-2 inline-block cursor-pointer rounded-lg  hover:bg-linear-to-t from-sky-500 to-indigo-500"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.8 }}
-              
             >
               Deep Dive
             </motion.button>

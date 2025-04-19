@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import {
   SiLeetcode,
   SiCodechef,
@@ -12,12 +12,12 @@ import Languages from "./Languages";
 function Info() {
   /**** Multi Ref for tracking div individual *****/
   const ref1 = useRef();
-    const isInView1 = useInView(ref1, { once: true });
+  const isInView1 = useInView(ref1, { once: true });
   const ref2 = useRef();
-    const isInView2 = useInView(ref2, { once: true });
+  const isInView2 = useInView(ref2, { once: true });
   const ref3 = useRef();
-    const isInView3 = useInView(ref3, { once: true });
-    
+  const isInView3 = useInView(ref3, { once: true });
+
   const toolTips_Id_Content = [
     {
       id: "leetcode",
@@ -44,20 +44,20 @@ function Info() {
           wondered how it worked, was it the battery inside that made it
           function? My curiosity about how software works and how it is made led
           me to this field.As a software engineer, all you need is a PC, an
-          internet connection, and a cup of coffee☕—and you can build anything.`
+          internet connection, and a cup of coffee☕—and you can build anything.`;
   const cp = `I enjoy problem-solving and regularly practice DSA problems on
             various platforms like LeetCode, CodeChef, Coding Ninjas, and
             GeeksforGeeks. This not only enhances my problem-solving skills and
             analytical thinking but also sharpens my expertise and motivates me
-            to take on new challenges.`
+            to take on new challenges.`;
   const P_M_B = "p-4  rounded-2xl";
   const text = "text-[1.8em] text-center";
 
   return (
     <div className=" grid grid-auto-rows-auto grid-cols-1 md:grid-cols-2 col-span-[1fr] mt-[20px] pb-10 ">
       <motion.div
-       ref={ref1}
-       initial={{ opacity: 0, y: 100, scale: 0.8 }}
+        ref={ref1}
+        initial={{ opacity: 0, y: 100, scale: 0.8 }}
         animate={isInView1 ? { opacity: 1, y: 0, scale: 1 } : {}}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={` md:col-span-2 m-2.5 ${P_M_B} backdrop-blur-2xl border-1`}
@@ -68,16 +68,15 @@ function Info() {
         </p>
       </motion.div>
       <motion.div
-      ref={ref3}
-      initial={{ opacity: 0, x: -100, scale: 0.8 }}
-      animate={isInView3 ? { opacity: 1, x: 0, scale: 1 } : {}}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-       className={`bg-[#191919] ${P_M_B} m-2.5 relative overflow-hidden`}>
+        ref={ref3}
+        initial={{ opacity: 0, x: -100, scale: 0.8 }}
+        animate={isInView3 ? { opacity: 1, x: 0, scale: 1 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`bg-[#191919] ${P_M_B} m-2.5 relative overflow-hidden`}
+      >
         <div className="">
           <p className={`${text}`}>As a competitive programmer</p>
-          <p className="text-center mt-2.5 text-sm font-normal">
-            {cp}
-          </p>
+          <p className="text-center mt-2.5 text-sm font-normal">{cp}</p>
         </div>
         {/* Plateform icons */}
         <div className="flex justify-around text-2xl p-4 mt-2">
@@ -148,7 +147,7 @@ export default Info;
 // initial={{ opacity: 0, scale: 0 }}
 // animate={isView? { opacity: 1, scale: 1 }:{}}
 // transition={{
-  
+
 //   duration: 0.5,
 //   scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
 // }}
