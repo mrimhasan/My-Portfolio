@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { motion } from "motion/react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,8 +8,8 @@ const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
 
 const inputClass =
-  "px-4 mb-8 w-full h-9 font-light border-1 focus:border-none focus-within:ring-3 focus-within:ring-blue-600 rounded-lg outline-none ";
-const inputDivClass = "w-[80%] sm:w-[60%]";
+  "px-4  w-full h-9 font-light border-1 focus:border-none focus-within:ring-3 focus-within:ring-blue-600 rounded-lg outline-none ";
+const inputDivClass = "w-[80%] sm:w-[60%] mb-8";
 
 const input = [
   {
@@ -55,9 +55,25 @@ function reducer(state, action) {
 
 function ContactForm() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [required, setRequired] = useState(false);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const fillAllFields = (text) => {
+    setRequired(true);
+    return toast.warning(
+      <div className="text-center">
+        <p className="text-lg">{text}</p>
+      </div>,
+      {
+        position: "top-center",
+        draggable: true,
+        theme: "dark",
+      }
+    );
+  };
 
-  const formSubmitSuccessfully = () =>
-    toast.success(
+  const formSubmitSuccessfully = () => {
+    setRequired(false);
+    return toast.success(
       <div>
         <p className="text-lg">Thank you {state.name}</p>
         <small className="font-light text-slate-300">
@@ -70,7 +86,7 @@ function ContactForm() {
         theme: "dark",
       }
     );
-
+  };
   const somthingWrong = (text) =>
     toast.error(
       <div className="text-center">
@@ -95,24 +111,33 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .send(
-        serviceId,
-        templateId,
-        state, // dynamic data
-        publicKey
-      )
-      .then(
-        (res) => {
-          console.log("EmailJS__RESPONSE:", res);
-          formSubmitSuccessfully();
-          dispatch({ type: "RESET" });
-        },
-        (error) => {
-          console.log("EmailJS__ERROR:", error);
-          somthingWrong("Something went wrong!");
-        }
-      );
+    {
+      Object.values(state).some((val) => val === "")
+        ? fillAllFields("Please fill all the fields")
+        : ![10, 11, 12, 13].includes(state.contact.length)
+        ? toast.warning("Please enter valid contact number", {
+            position: "top-center",
+            draggable: true,
+            theme: "dark",
+          })
+        : emailRegex.test(state.email)
+        ? emailjs.send(serviceId, templateId, state, publicKey).then(
+            (res) => {
+              console.log("EmailJS__RESPONSE:", res);
+              formSubmitSuccessfully();
+              dispatch({ type: "RESET" });
+            },
+            (error) => {
+              console.log("EmailJS__ERROR:", error);
+              somthingWrong("Something went wrong!");
+            }
+          )
+        : toast.warning("Please enter valid email", {
+            position: "top-center",
+            draggable: true,
+            theme: "dark",
+          });
+    }
     console.log("Submitted:", state);
     //dispatch({ type: "RESET" });
   };
@@ -131,7 +156,7 @@ function ContactForm() {
         <div key={indx} className={`${inputDivClass}`}>
           <label htmlFor={item.name}>
             {item.label}
-            <sup>*</sup>
+            <sup className="text-red-600">*</sup>
           </label>
           <br />
           <input
@@ -150,12 +175,18 @@ function ContactForm() {
             type={item.type}
             placeholder={item.placeholder}
           />
+          {required ? (
+            <small className="font-extralight text-red-600">
+              This fields is required
+            </small>
+          ) : null}
         </div>
       ))}
 
       <div className={`${inputDivClass}`}>
         <label htmlFor="message">
-          Your Message<sup>*</sup>
+          Your Message
+          <sup className="text-red-600">*</sup>
         </label>
         <br />
         <textarea
@@ -166,6 +197,11 @@ function ContactForm() {
           value={state.message}
           onChange={handleChange}
         ></textarea>
+        {required ? (
+          <small className="font-extralight text-red-600">
+            This fields is required
+          </small>
+        ) : null}
       </div>
 
       <motion.button
@@ -174,7 +210,7 @@ function ContactForm() {
         className="w-40 h-10 mt-4 cursor-pointer border-2 border-white  rounded-xl hover:bg-linear-to-t from-indigo-500 to-sky-500"
         type="submit"
       >
-        Sumbit
+        Submit
       </motion.button>
       <ToastContainer />
     </form>
