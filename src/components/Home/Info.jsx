@@ -117,12 +117,12 @@ function Info() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <p className={`${text}`}>Quote's</p>
-        <p className="relative">
+        <p className="relative text-sm font-normal mt-4">
           1. The miracle you're waiting for is hidden within the work you are
           avoiding.
           <span className="absolute right-2 italic">-SELF</span>
         </p>
-        <p className="relative">
+        <p className="relative text-sm font-normal my-4">
           2. I believe we are here on the planet Earth to live grow up and do
           what we can to make this world a better place for all people to enjoy
           freedom. <span className="absolute right-2 italic">-ROSA PARKS</span>

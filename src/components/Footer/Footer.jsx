@@ -78,7 +78,7 @@ function Footer() {
             </a>
           ))}
         </div>
-        <p className="mt-4">
+        <p className="mt-4 px-1">
           © 2024 Imran Hasan. Built with ❤️ using React & TailwindCSS.
         </p>
         {/* Tool tips */}
