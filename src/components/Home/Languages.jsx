@@ -19,7 +19,7 @@ function Languages() {
       </p>
       <div className="mt-3 text-neutral-200">
         <p className="text-xl">Hindi</p>
-        <div className="flex justify-around">
+        <div className="flex justify-around text-sm">
           <span>Speaking: Native</span>
           <span>Reading: Advance</span>
           <span>Writing: Advance</span>
@@ -27,7 +27,7 @@ function Languages() {
       </div>
       <div className="mt-3  text-neutral-200">
         <p className="text-xl">English</p>
-        <div className="flex justify-around ">
+        <div className="flex justify-around text-sm">
           <span>Speaking: Intermediate</span>
           <span>Reading: Advance</span>
           <span>Writing: Advance</span>
@@ -35,13 +35,13 @@ function Languages() {
       </div>
       <div className="mt-3  text-neutral-200">
         <p className="text-xl">Urdu</p>
-        <div className="flex justify-around">
+        <div className="flex justify-around text-sm">
           <span>Speaking: Intermediate</span>
           <span>Reading: Intermediate</span>
           <span>Writing: Elementry</span>
         </div>
       </div>
-      <div className="mt-3  text-neutral-200">
+      <div className="mt-3  text-neutral-200 text-sm">
         <p className="text-xl">Arabic</p>
         <div className="flex justify-around">
           <span>Speaking: Elementry</span>
@@ -51,7 +51,7 @@ function Languages() {
       </div>
       <div className="mt-3 mb-2.5  text-neutral-200">
         <p className="text-xl">Japenese (Nihongo)</p>
-        <div className="flex justify-around">
+        <div className="flex justify-around text-sm">
           <span>Speaking: Elementry</span>
           <span>Reading: Learning...</span>
           <span>Writing: Learning...</span>

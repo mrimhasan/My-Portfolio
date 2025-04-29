@@ -3,7 +3,7 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 const myinfo = [
-  "My name is Imran Hasan, 24 years old, and I come from the beautiful city of Agra proudly known as the City of Love and the home of the majestic Taj Mahal.",
+  "My name is Imran Hasan, 24 years old, and I come from the beautiful city of Agra proudly known as the City of Love ❤ and the home of the majestic Taj Mahal.",
   `I’ve completed my Bachelor of Technology in Computer Science in 2023, and while I may humbly consider myself an "average student" in terms of academic scores, I believe college life is about much more than marks—it's about experiences, memories, and growth.`,
   "My college journey was filled with friendship, support, and laughter, thanks to my wonderful and encouraging peers.",
   "We shared countless moments from late night coding sessions and challenging assignments to chai breaks and college fests.",

@@ -15,9 +15,9 @@ export default function BeyondTheCode() {
           <source src="/images/beyound/zenitsu.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="relative z-10 text-white p-10">
-          <h1 className="text-4xl font-bold hidden lg:block">
-            Welcome to My Portfolio
+        <div className="relative z-10 text-white sm:p-10 pt-10">
+          <h1 className="text-sm sm:text-3xl font-bold max-[600px]:text-nowrap max-[600px]:text-center">
+          Balancing Lifestyle, Strength and Passion
           </h1>
         </div>
       </div>

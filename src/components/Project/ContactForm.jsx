@@ -8,7 +8,7 @@ const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
 
 const inputClass =
-  "px-4  w-full h-9 font-light border-1 focus:border-none focus-within:ring-3 focus-within:ring-blue-600 rounded-lg outline-none ";
+  "px-4  w-full h-9 font-light border-1 focus:border-none focus-within:ring-1 focus-within:ring-blue-600 rounded-lg outline-none ";
 const inputDivClass = "w-[80%] sm:w-[60%] mb-8";
 
 const input = [
@@ -17,21 +17,21 @@ const input = [
     label: "Full Name",
     name: "name",
     type: "text",
-    placeholder: "enter your full name",
+    placeholder: "Ex : Abdul Hannan",
   },
   {
     id: 1,
     label: "Your Contact Number",
     name: "contact",
     type: "text",
-    placeholder: "enter your contact number",
+    placeholder: "Ex : +9184684568XX",
   },
   {
     id: 2,
     label: "Your Email",
     name: "email",
     type: "email",
-    placeholder: "enter your email",
+    placeholder: "Ex : example@gmail.com",
   },
 ];
 
@@ -146,34 +146,34 @@ function ContactForm() {
     <form
       onSubmit={handleSubmit}
       action=""
-      className="max-w-3xl h-auto py-5 text-white mx-auto mt-8 rounded-2xl flex flex-col items-center justify-around bg-gradient-to-b from-neutral-800/20 to-slate-800/30"
+      className="max-w-3xl h-auto py-5 text-white mx-auto my-8 rounded-2xl flex flex-col items-center justify-around bg-gradient-to-b from-neutral-800/20 to-slate-800/30"
     >
       <h1 className="text-3xl sm:text-5xl mb-5 text-blue-600 font-extrabold">
         Contact Form
       </h1>
 
-      {input.map((item, indx) => (
+      {input.map((input, indx) => (
         <div key={indx} className={`${inputDivClass}`}>
-          <label htmlFor={item.name}>
-            {item.label}
+          <label htmlFor={input.name}>
+            {input.label}
             <sup className="text-red-600">*</sup>
           </label>
           <br />
           <input
             className={`${inputClass}`}
-            id={item.name}
-            name={item.name}
+            id={input.name}
+            name={input.name}
             autoComplete="true"
             value={
-              item.name === "name"
+              input.name === "name"
                 ? state.name
-                : item.name === "email"
+                : input.name === "email"
                 ? state.email
                 : state.contact
             }
             onChange={handleChange}
-            type={item.type}
-            placeholder={item.placeholder}
+            type={input.type}
+            placeholder={input.placeholder}
           />
           {required ? (
             <small className="font-extralight text-red-600">
@@ -190,7 +190,7 @@ function ContactForm() {
         </label>
         <br />
         <textarea
-          className="w-full h-[150px] p-3 font-light border-1 focus:border-none focus-within:ring-3 focus-within:ring-blue-600 rounded-lg outline-none overflow-auto"
+          className="w-full h-[150px] p-3 font-light border-1 focus:border-none focus-within:ring-1 focus-within:ring-blue-600 rounded-lg outline-none overflow-auto"
           id="message"
           name="message"
           placeholder="enter your message here"

@@ -79,7 +79,7 @@ function Footer() {
           ))}
         </div>
         <p className="mt-4 px-1">
-          © 2024 Imran Hasan. Built with ❤️ using React & TailwindCSS.
+          © 2025 Imran Hasan. Built with ❤️ using React & TailwindCSS.
         </p>
         {/* Tool tips */}
         {toolTip.map((items, indx) => (
