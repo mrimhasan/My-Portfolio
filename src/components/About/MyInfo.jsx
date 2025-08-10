@@ -31,7 +31,7 @@ const Introduction = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div ref={ref} className="min-[700px]:col-span-2 text-neutral-200 mx-auto">
+    <div ref={ref} className="min-[700px]:col-span-2 text-neutral-200 mx-auto mb-10">
       <p className="text-[3em]/10 font-serif">Hello everyone,</p>
       {myinfo.map((text, indx) => (
         <motion.p
@@ -51,7 +51,7 @@ const Introduction = () => {
 
 function MyInfo() {
   return (
-    <div className=" mx-10 mt-12 grid grid-rows-auto grid-cols-1 min-[700px]:grid-cols-2 pb-12">
+    <div className=" mx-10 mt-12 grid grid-rows-auto grid-cols-1 gap-y-5 min-[700px]:grid-cols-2 pb-12">
       <Introduction />
       <div className="place-content-center max-[700px]:order-2 md:px-8">
         <p className="text-sm/5 mt-3 font-extralight text-white">

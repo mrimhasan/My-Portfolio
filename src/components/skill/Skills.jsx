@@ -11,36 +11,42 @@ function Skills() {
       name: "Git",
       about: ` is a version control system that is used to track changes to your files. It is a free and open-source software that is available for Windows, macOS, and Linux. Remember, GIT is a software and can be installed on your computer.`,
       image: "/images/T&T-IMG/git.png",
+      color: "text-red-400"
     },
     {
       name: "Github",
       about:
         " is a web-based hosting service for Git repositories. Github is an online platform that allows you to store and share your code with others. It is a popular platform for developers to collaborate on projects and to share code.",
       image: "/images/T&T-IMG/github.png",
+      color: "text-zinc-900"
     },
     {
       name: "Visual Studio Code",
       about:
         " is an integrated development environment developed by Microsoft for Windows, Linux, macOS and web browsers.Features include support for debugging, intelligent code completion, snippets, and embedded version control with Git.",
       image: "/images/T&T-IMG/vscode.png",
+      color: "text-blue-500"
     },
     {
       name: "Stackblitz/Codesandbox",
       about:
         " are cloud-based online IDE, or web IDE. Which is a programming environment accessible through a web browser, offering features like code editing, compiling, debugging, and more, all within a cloud-hosted environment. ",
       image: "/images/T&T-IMG/stackblitz.png",
+      color: "text-blue-400"
     },
     {
       name: "Postmen",
       about:
         "API testing uses Postman, a comprehensive API platform, to simplify creating, testing, and documenting APIs by allowing developers to design, test, and automate API testing processes with an intuitive interface. ",
       image: "/images/T&T-IMG/postmen.png",
+      color: "text-orange-500"
     },
     {
       name: "Notion",
       about:
         " is a collaboration platform with Markdown and including kanban boards, tasks, wikis and databases. It is a workspace for notetaking, knowledge and data management, as well as project and task management.",
       image: "/images/T&T-IMG/notion.png",
+      color: "text-black"
     },
   ];
   return (
@@ -87,7 +93,7 @@ function Skills() {
         </h1>
       </motion.div>
 
-      <div className="grid grid-rows-auto grid-cols-1 lg:grid-cols-2 gap-6 mt-[2%] p-2">
+      <div className="grid grid-rows-auto grid-cols-1 lg:grid-cols-2 gap-10 mt-[2%] p-2">
         {tools_Technologies.map((items) => {
           const x = useMotionValue(0);
           const y = useMotionValue(0);
@@ -125,7 +131,7 @@ function Skills() {
                 className="h-[80%] sm:h-[60%]"
               />
               <p className="text-white text-[0.8rem] sm:text-[1rem]/5 font-normal">
-                <span className="text-sky-600 sm:text-zinc-600 font-extrabold">
+                <span className={`${items.color} font-extrabold`}>
                   {items.name}
                 </span>{" "}
                 {items.about}

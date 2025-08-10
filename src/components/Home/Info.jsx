@@ -59,7 +59,7 @@ function Info() {
         ref={ref1}
         initial={{ opacity: 0, y: 100, scale: 0.8 }}
         animate={isInView1 ? { opacity: 1, y: 0, scale: 1 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
         className={` md:col-span-2 m-2.5 ${P_M_B} backdrop-blur-2xl border-1`}
       >
         <p className={`${text}`}>Why I choose software engineering</p>
@@ -71,7 +71,7 @@ function Info() {
         ref={ref3}
         initial={{ opacity: 0, x: -100, scale: 0.8 }}
         animate={isInView3 ? { opacity: 1, x: 0, scale: 1 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
         className={`bg-[#191919] ${P_M_B} m-2.5 relative overflow-hidden`}
       >
         <div className="">
@@ -114,7 +114,7 @@ function Info() {
         ref={ref2}
         initial={{ opacity: 0, x: -100, scale: 0.8 }}
         animate={isInView2 ? { opacity: 1, x: 0, scale: 1 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         <p className={`${text}`}>Quote's</p>
         <p className="relative text-sm font-normal mt-4">
@@ -146,11 +146,3 @@ function Info() {
 }
 
 export default Info;
-/******* backOut animate ****/
-// initial={{ opacity: 0, scale: 0 }}
-// animate={isView? { opacity: 1, scale: 1 }:{}}
-// transition={{
-
-//   duration: 0.5,
-//   scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-// }}
